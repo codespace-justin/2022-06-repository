@@ -1,0 +1,16 @@
+{
+ "header" : 
+    {
+        " filterOption" : "commerce"
+    },
+ "body" : 
+    [
+        "payload", 
+        "file", 
+        "String", 
+        "array"
+    ],
+ "status" : {
+    
+ }
+}
