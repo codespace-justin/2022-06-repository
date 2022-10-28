@@ -85,3 +85,15 @@
     ?>
 </body>
 </html>
+
+<!-- 
+
+        Object Orientated Programming
+
+        : Abstraction
+        : Encapsulation
+        
+        : Inheritance
+        : Polymorphism
+
+ -->
