@@ -21,6 +21,10 @@ class CodespaceStudent {
 
  // ================ methods ================
 
+    private function generateStudNo() {
+        return "#" . rand(10000, 90000);
+    }
+
     public function login() {
         return $this->studentNumber . " has just logged in";
     }
@@ -40,7 +44,7 @@ class CodespaceStudent {
 
     }
 
- // ================ methods ================
+ // ================ getters and setters ================
 
     public function getStudentNumber()
     {
