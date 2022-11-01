@@ -70,3 +70,24 @@ class CodespaceStudent {
         return $this;
     }
 }
+
+// ------ test ---------
+
+    // instanciation
+    $student1 = new CodespaceStudent("Thato", "Molefe6545843");
+    $student2 = new CodespaceStudent("Duane", "guest");
+
+    $student2->setStudentNumber("slighjrek");
+
+    $student2->missedClass();
+    $student2->missedClass();
+    $student2->missedClass();
+
+
+    echo$student1;
+    echo "<br>";
+    echo$student2;
+
+
+    
+
