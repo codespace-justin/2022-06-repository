@@ -4,15 +4,14 @@
     </h2>
     <div class="section">
         <?php
-            foreach ($_SESSION['dummyData'] as $index => $data) {
+            foreach ($_SESSION['properties'] as $index => $property) {
                 echo "
                     <ul class='box'>
-                        <li>" . $data['address'] . "</li>
-                        <li>" . $data['rooms'] . "</li>
-                        <li> R" . $data['rent'] . "00 </li> 
+                        <li>" . $property->getAddress() . "</li>
+                        <li> R" . $property->getPrice() . " /m </li> 
                         <br>
                         <button>
-                            Buy
+                            Rent
                         </button>
                     </ul>
                 ";

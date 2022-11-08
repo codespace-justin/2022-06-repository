@@ -55,42 +55,38 @@
 
     <hr>
 
-    <div class="nav">
-        <form action="<?= $_SERVER['PHP_SELF']?>" method="get">
-            <button type="submit" name="filterOption" value="sale">For Sale</button>
-        </form>
+    <?php
+        foreach ($_SESSION['properties'] as $property) {
+            echo "$property <hr>";
 
-        <form action="<?= $_SERVER['PHP_SELF']?>" method="get">
-            <button type="submit" name="filterOption" value="rent">For Rent</button>
-        </form>
+           // echo $property->compareTo();
+        }
 
-        <form action="<?= $_SERVER['PHP_SELF']?>" method="get">
-            <button type="submit" name="filterOption" value="commerce">Commercial</button>
+        echo "<br>";
+
+        echo Property::compareTo($_SESSION['properties'][2], $_SESSION['properties'][0]);
+    ?>
+
+    <br>
+
+    <div>
+        <h2>
+            Create Property
+        </h2>
+        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+
         </form>
     </div>
 
-    <?php
-        if ( isset( $_GET['filterOption'] ) ) {
-            
-            switch ($_GET['filterOption']) {
-                case 'sale':
-                    include_once __DIR__ . "/template/sale.tpl.php";
-                    break;
+    <div>
+        <h2>
+            Create Property
+        </h2>
+        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
 
-                case 'rent':
-                    include_once __DIR__ . "/template/rent.tpl.php";
-                    break;
+        </form>
+    </div>
 
-                case 'commerce':
-                    include_once __DIR__ . "/template/commerce.tpl.php";
-
-                default:
-                    # code...
-                    break;
-            }
-
-        }
-    ?>
 </body>
 </html>
 

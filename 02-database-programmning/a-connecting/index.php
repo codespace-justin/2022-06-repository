@@ -10,17 +10,9 @@
 
 // ============================== Variables and logic ================================ 
 
-    include_once __DIR__ . "/includes/data.php";
-    
+    include_once __DIR__ . "/includes/data.php";    
     include_once __DIR__ . "/model/ResidentialProperty.php";
-    //$_SESSION['dummyData'] = $dummyData;
 
-    $residence1 = new ResidentialProperty("rent", 3, "02 plein street", 9000);
-    $residence2 = new Property("10 plein street", 7000);
-
-    echo $residence1;
-    echo "<br>";
-    echo $residence2;
 ?>
 
 
@@ -74,15 +66,15 @@
             
             switch ($_GET['filterOption']) {
                 case 'sale':
-                    include_once __DIR__ . "/template/sale.tpl.php";
+                    include_once __DIR__ . "/views/saleTab.php";
                     break;
 
                 case 'rent':
-                    include_once __DIR__ . "/template/rent.tpl.php";
+                    include_once __DIR__ . "/views/rentTab.php";
                     break;
 
                 case 'commerce':
-                    include_once __DIR__ . "/template/commerce.tpl.php";
+                    include_once __DIR__ . "/views/commerceTab.php";
 
                 default:
                     # code...
