@@ -1,7 +1,3 @@
-<?php
-    
-?>
-
 <section id="commercial">
     <h2>
         Commercial properties for to rent:
@@ -15,7 +11,9 @@
                     echo "
                         <ul class='box'>
                             <li>" . $property->getAddress() . "</li>
-                            <li> R" . $property->getPrice() . " /m2 </li> 
+                            <li> R: " . $property->getPrice() . " per m2 </li> 
+                            <li> Size: " . $property->getSizeInMetres() . "m </li> 
+                            <li> Floors: " . $property->getFloors() . "</li>
                             <br>
                             <button>
                                 Lease

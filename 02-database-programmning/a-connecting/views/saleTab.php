@@ -11,7 +11,8 @@
                     echo "
                         <ul class='box'>
                             <li>" . $property->getAddress() . "</li>
-                            <li> R" . $property->getPrice() . " /m2 </li> 
+                            <li> R: " . $property->getPrice() . "</li> 
+                            <li> Rooms: " . $property->getNumRooms() . "</li>
                             <br>
                             <button>
                                 Buy

@@ -15,6 +15,7 @@ class CommercialProperty extends Property {
     public function __construct($addressInput, $priceInput, $sizeInMetresInput, $floorsInput) {
 
         parent::__construct($addressInput, $priceInput);
+        
         $this->sizeInMetres = $sizeInMetresInput;
         $this->floors = $floorsInput;
     }

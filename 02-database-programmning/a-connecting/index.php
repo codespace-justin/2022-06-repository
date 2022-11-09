@@ -10,8 +10,7 @@
 
 // ============================== Variables and logic ================================ 
 
-    include_once __DIR__ . "/includes/data.php";    
-    include_once __DIR__ . "/model/ResidentialProperty.php";
+    include_once __DIR__ . "/includes/data.php";   
 
 ?>
 
@@ -41,7 +40,7 @@
     </style>
 </head>
 <body>
-    <h1 >
+    <h1>
         Property 48
     </h1>
 
