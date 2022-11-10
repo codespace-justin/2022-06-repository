@@ -1,12 +1,16 @@
 <?php
 
 class User {
+
+    // ===================================== Fields =========================================
     
     private $id;
     private $username;
     private $password;
     private $email;
     private $role;
+
+    // ===================================== Constructor =========================================
     
     public function __construct($username,$password,$email,$role) {
 
@@ -17,6 +21,8 @@ class User {
 
         $this->id = $this->generateId();
     }
+
+    // ===================================== Methods =========================================
 
     private function generateId() {
 
@@ -41,6 +47,28 @@ class User {
         }
     }
 
+    public function createUser($User) {
+
+        $DbConfig = new DbConfig(); 
+        $connection = $DbConfig->connectToDatabase();
+
+        // SQL statement
+        $statement = "INSERT INTO property (id, username, password, email, role)" .
+                     "VALUES ('$User->id','$User->username','$User->password','$User->email','$User->role')";
+
+        // Send request
+        if ($result = $connection->query($statement)) {
+
+            return $result; // either true or false
+            $connection->close();
+
+        } else {
+            // die function is used to kill connection to database and usually used in error handling
+            die("Connection failed: " . $connection->error); //die function to close connection in case of error
+        }
+    }
+
+    // ===================================== Get & Set =========================================
 
     public function getId()
     {
@@ -85,6 +113,18 @@ class User {
     public function setEmail($email)
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+
+    public function getRole()
+    {
+        return $this->role;
+    }
+    public function setRole($role)
+    {
+        $this->role = $role;
 
         return $this;
     }
