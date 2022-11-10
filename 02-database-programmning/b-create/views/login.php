@@ -17,6 +17,18 @@
     $mockUser = new User("Guest", "guest01!", 'guest@guest.com', "customer");
     $userDao = new UserDAO();
 
+    if (isset($_POST['login'])) {
+
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        
+        
+        $loggedInUser = $userDao->readById($dbConfig, "A#fc5e038d38a57032085441e7fe7010b0");
+
+        var_dump($loggedInUser);
+    }
+
 
     //$userDao->createUser($dbConfig, $mockUser);
 
