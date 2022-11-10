@@ -18,7 +18,7 @@
     $userDao = new UserDAO();
 
 
-    $userDao->createUser($dbConfig, $mockUser);
+    //$userDao->createUser($dbConfig, $mockUser);
 
 // ======================================== Page ========================================
 ?>
