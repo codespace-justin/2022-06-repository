@@ -5,7 +5,7 @@ require_once __DIR__ . "/User.php";
 // Data Access Object
 class UserDAO {
 
-    // ----- Create -----
+    // -------------------------------------- Create --------------------------------------
     public function createUser($DbConfig, $User) {
 
         $connection = $DbConfig->connectToDatabase();
@@ -26,7 +26,7 @@ class UserDAO {
         }
     }
 
-    // ----- Read By ID -----
+    // -------------------------------------- Read By ID --------------------------------------
     public function readById($DbConfig, $userId) {
 
         // connect to DB
