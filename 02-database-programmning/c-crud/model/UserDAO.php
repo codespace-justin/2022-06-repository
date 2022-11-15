@@ -28,24 +28,25 @@ class UserDAO {
     }
 
     
-    /* --------------------------------------------  Read By Id  -------------------------------------------------- */
+    /* --------------------------------------------  Read By Username -------------------------------------------------- */
 
-    public function readByUsernameAndPassword($DbConfig, $userId) {
+    public function readByUsername($DbConfig, $username, $password) {
 
         // connect to DB
         $connection = $DbConfig->connectToDatabase();
 
         // SQL statement
-        $statement = "SELECT * FROM user WHERE id='$userId' ";
+        $statement = "SELECT * FROM user WHERE username='$username'";
 
         if ($result = $connection->query($statement)) {
 
             // get only 1 single result
             $row = $result->fetch_object(); // returns a PHP stdObject
 
-            // only call parse function if object exists in database, otherwise return nothing
-            if ($row !== null) {
-            
+            // only call parse function if object exists in database and if the password passed as an argument
+            // is the same as the password in the database, create a new User object and return it
+            if ($row !== null && $password == $row->password) {
+
                 $userObject = new User(
                     $row->username,
                     $row->password,

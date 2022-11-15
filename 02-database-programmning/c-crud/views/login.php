@@ -19,12 +19,15 @@
 
     if (isset($_POST['login'])) {
 
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        $postUsername = $_POST['username'];
+        $postPassword = $_POST['password'];
         
-        $loggedInUser = $userDao->readById($dbConfig, "A#fc5e038d38a57032085441e7fe7010b0");
+        $loggedInUser = $userDao->readByUsername($dbConfig, $postUsername, $postPassword);
 
-        var_dump($loggedInUser);
+        if ($loggedInUser) {
+            var_dump($loggedInUser);
+        }
+        
     }
 
 
@@ -63,6 +66,15 @@
             <button type="submit" name="login">
                 Log In
             </button>
+            <?php
+                if(isset($_POST['login']) && $loggedInUser == null) {
+                    echo "
+                        <p style='color:red;'>
+                            Please login as a registered user or enter a correct pasword..
+                        </p>
+                    ";
+                }
+            ?>
         </form>   
 
         <form  action="<?=$_SERVER['PHP_SELF']?>" method="post">
