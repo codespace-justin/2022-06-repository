@@ -26,6 +26,11 @@
 
         if ($loggedInUser) {
             var_dump($loggedInUser);
+
+            $_SESSION['loggedInUser'] = $loggedInUser;
+            $_SESSION['loggedIn'] = 'true';
+
+            header("Location: ../index.php");
         }
         
     }
