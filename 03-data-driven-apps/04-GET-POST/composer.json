@@ -1,0 +1,21 @@
+{
+    "name": "lenovo/02-composer",
+    "description": "Basic overview of PHP's package manager 'Composer'",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Lenovo\\02Composer\\": "src/",
+            "Models\\" : "src/model/",
+            "DataAccessObjects\\" : "src/data/"
+        }
+    },
+    "authors": [
+        {
+            "name": "justinjenecke",
+            "email": "justinjenecke@gmail.com"
+        }
+    ],
+    "require": {
+        "hackzilla/password-generator": "^1.6"
+    }
+}
