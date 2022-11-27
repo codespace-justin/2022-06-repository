@@ -6,7 +6,8 @@
         "psr-4": {
             "Lenovo\\02Composer\\": "src/",
             "Models\\" : "src/model/",
-            "DataAccessObjects\\" : "src/data/"
+            "DataAccessObjects\\" : "src/data/",
+            "Config\\" : "src/config/"
         }
     },
     "authors": [

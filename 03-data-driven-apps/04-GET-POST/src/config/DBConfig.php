@@ -1,18 +1,35 @@
 <?php
 
-function connect() {
-    $host = "localhost";
-    $username = "root";
-    $password = "root";
-    $dbName = "autocar_trader";
-    $port = 3308; // port number only needs to be used if custom port is used on MAMP
+namespace Config;
 
-    $conn = new mysqli($host, $username, $password, $dbName, $port);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error); //die function to close connection in case of error
-    } else {
-        return $conn;
+class DbConfig {
+
+    private $user = 'root';
+    private $password = 'root';
+    private $db = 'autocar_trader';
+    private $host = 'localhost';
+    private $port = 3308;
+
+    public function connectToDatabase() {
+
+        // mysqli class is part of the Global namespace so we add a backslash in front of it
+        // to ensure we can access it
+        $mysqli = new \mysqli(
+            $this->host,
+            $this->user,
+            $this->password,
+            $this->db,
+            $this->port
+        );
+
+        // Check connection
+        if ($mysqli->connect_error) {
+            die("Connection failed: " . $mysqli->connect_error);
+
+        } else {
+            //echo "connected successfully";
+            return $mysqli;
+        }
     }
-}
 
+}
