@@ -18,7 +18,7 @@ class Vehicle {
 
     public function createCard() {
         return " 
-          <h2 ID : $this->id> 
+          <h2> ID : $this->id</h2> 
           <ul>
             <li>Type: $this->type</li>
             <li>Manufacturer: $this->brand</li>

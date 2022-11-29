@@ -14,6 +14,7 @@ class DbConfig {
 
         // mysqli class is part of the Global namespace so we add a backslash in front of it
         // to ensure we can access it
+
         $mysqli = new \mysqli(
             $this->host,
             $this->user,

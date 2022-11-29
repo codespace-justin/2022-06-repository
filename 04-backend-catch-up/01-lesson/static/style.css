@@ -1,0 +1,14 @@
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.item {
+    margin: 5px;
+    padding: 30px;
+    background-color: rgb(214, 214, 214);
+}
+
+.item:hover {
+    background-color: gray;
+}

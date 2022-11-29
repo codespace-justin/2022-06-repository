@@ -1,6 +1,6 @@
 <?php
 
-namespace DataAccessObjects;
+namespace DataPersistence;
 
 use Models\Vehicle;
 
@@ -33,9 +33,9 @@ class VehicleDAO {
 
         $connection = $DbConfig->connectToDatabase();
 
-        $usersFromDb = [];
+        $vehiclesFromDb = [];
 
-        $statement = "SELECT * FROM user";
+        $statement = "SELECT * FROM vehicle";
 
         if ($result = $connection->query($statement)) {
 
@@ -46,11 +46,11 @@ class VehicleDAO {
 
                 $vehicleObject->setId($row->id);
 
-                array_push($usersFromDb, $vehicleObject);
+                array_push($vehiclesFromDb, $vehicleObject);
             } 
             
             $connection->close();
-            return $usersFromDb;           
+            return $vehiclesFromDb;           
             
         } else {
 
@@ -91,7 +91,7 @@ class VehicleDAO {
 
         $connection = $DbConfig->connectToDatabase();
 
-        $statement = "DELETE FROM user WHERE id=$id";
+        $statement = "DELETE FROM vehicle WHERE id=$id";
    
         if ($result = $connection->query($statement)) {
             

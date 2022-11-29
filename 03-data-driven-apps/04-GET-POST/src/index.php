@@ -7,8 +7,15 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
+// app namespaces
 use Models\Vehicle;
-use DataAccessObjects\VehicleDAO;
+use DataPersistence\VehicleDAO;
+use Config\DbConfig;
 
-$vehicleDAO = new VehicleDAO();
+
+
+//$dbConfig = new DbConfig();
+//$vehicleDAO = new VehicleDAO();
+
+// ---------- Setup ------------
 
