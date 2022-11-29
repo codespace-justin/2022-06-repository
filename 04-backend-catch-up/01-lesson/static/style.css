@@ -12,3 +12,34 @@
 .item:hover {
     background-color: gray;
 }
+
+.till__display {
+    margin: 2rem 25vw;
+    text-align: center;
+}
+
+.till__console {
+    padding: 1rem;
+    background-color: black;
+    color: rgb(14, 182, 14);
+    font-size: 1.25rem;
+}
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.checkout button {
+    margin: 1rem 25vw;
+    padding: 1rem;
+    background-color: cornflowerblue;
+}
+
+button {
+    padding: 0.5rem;
+}
+button:hover {
+    cursor: pointer;
+}

@@ -1,6 +1,7 @@
 <?php
 
     include_once __DIR__ . "/include/data.php";
+    include_once __DIR__ . "/include/addToTotal.php";
 
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -15,15 +16,8 @@
     
 
     if ( isset($_POST['selectedItemValue']) ) {
-
-        $_SESSION['subTotal'] = $_POST['selectedItemValue'] + $_SESSION['subTotal'];
-
-        echo $_SESSION['subTotal'];
+        addToTotal();
     }
-
- 
-    
-
 ?>
 
 <!DOCTYPE html>
@@ -32,15 +26,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>S&S POS</title>
     <link rel="stylesheet" href="./static/style.css">
 </head>
 <body>
     <h1>
-        Select and Pay
+        <span style="color:red">Select</span> and <span style="color:blue">Save</span>
     </h1>
 
     <hr>
+
+    <div class="till__display">
+        <div>
+            <span class="till__console">
+                Amount: <?php echo $_SESSION['subTotal'];?>
+            </span>
+        </div>
+    </div>
 
     <section >
     <form class="items" action=" <?php $_SERVER['PHP_SELF'] ?>" method="post">
@@ -49,7 +51,7 @@
         ?>   
             <button type="submit" name="selectedItemValue" value="<?php echo $items[$i]['price']; ?>" class="item">
                 <h3>
-                    Item <?php $i ?> 
+                    Item <?php echo $i + 1; ?> 
                 </h3>
                 <li>
                     barcode: <?php echo $items[$i]['barcode']; ?> 
@@ -67,7 +69,7 @@
     </form>
     </section>
 
-    <form action="./views/checkout.php" method="get">
+    <form action="./views/checkout.php" method="get" class="checkout">
         <input type="hidden" name="subTotal" value="<?php echo $_SESSION['subTotal']; ?>">
         <button type="submit">
             Proceed to payment
