@@ -45,28 +45,28 @@
     </div>
 
     <section >
-    <form class="items" action=" <?php $_SERVER['PHP_SELF'] ?>" method="post">
-        <?php
-            for ($i=0; $i < count($items); $i++) { 
-        ?>   
-            <button type="submit" name="selectedItemValue" value="<?php echo $items[$i]['price']; ?>" class="item">
-                <h3>
-                    Item <?php echo $i + 1; ?> 
-                </h3>
-                <li>
-                    barcode: <?php echo $items[$i]['barcode']; ?> 
-                </li>
-                <li>
-                    name <?php echo $items[$i]["name"]; ?> 
-                </li>
-                <li>
-                    price <?php echo $items[$i]['price']; ?> 
-                </li>
-            </button>
-        <?php
-            }
-        ?>
-    </form>
+        <form class="items" action=" <?php $_SERVER['PHP_SELF'] ?>" method="post">
+            <?php
+                for ($i=0; $i < count($items); $i++) { 
+            ?>   
+                <button type="submit" name="selectedItemValue" value="<?php echo $items[$i]['price']; ?>" class="item">
+                    <h3>
+                        Item <?php echo $i + 1; ?> 
+                    </h3>
+                    <li>
+                        barcode: <?php echo $items[$i]['barcode']; ?> 
+                    </li>
+                    <li>
+                        name <?php echo $items[$i]["name"]; ?> 
+                    </li>
+                    <li>
+                        price <?php echo $items[$i]['price']; ?> 
+                    </li>
+                </button>
+            <?php
+                }
+            ?>
+        </form>
     </section>
 
     <form action="./views/checkout.php" method="get" class="checkout">
@@ -88,14 +88,14 @@
         <?php
             for ($i=0; $i < count($items); $i++) { 
   
-            echo "
-                <ul class='item'>
-                    <h3>Item <?php $i ?> </h3>
-                    <li>barcode: " . $items[$i]['barcode'] . "</li>
-                    <li>name " . $items[$i]['name'] . "</li>
-                    <li>price" . $items[$i]['price'] . "</li>
-                </ul>
-            ";
+                echo "
+                    <ul class='item'>
+                        <h3>Item <?php $i ?> </h3>
+                        <li>barcode: " . $items[$i]['barcode'] . "</li>
+                        <li>name " . $items[$i]['name'] . "</li>
+                        <li>price" . $items[$i]['price'] . "</li>
+                    </ul>
+                ";
             }
         ?>
     </section>
