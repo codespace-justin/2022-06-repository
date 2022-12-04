@@ -2,12 +2,11 @@
 
 class Car {
 
-    private $id;
     private $model;
     private $manufacturer;
     private $price;
     private $image;
-    private $available = false;
+    private $available = true;
 
     public function __construct($model, $manufacturer, $price, $image) {
 
@@ -19,57 +18,31 @@ class Car {
 
     public function sellCar() {
 
-        if ($this->available == false) {
-            
-            return "Model is sold out..";
+        if ($this->available) {
         
-        } else {
-
             $this->available = false;
-            return $this-> manufacturer . " " . $this->model . " was sold for: R" . $this->price;
+            return true;
+
+        } else {  
+            return false;
+        }
+        
+    }
+
+    public function calcFullPrice() {
+        return $this->price * 72;
+    }
+    
+    public function displayAvailibility() {
+
+        if ( $this->available ) {
+            return "<li style='color:green;'>In stock</li>";
+        } else {
+            return "<li style='color:red;'>Out of stock</li>";
         }
     }
 
-    public function calcFullPrice()
-    {
-        return $this->price * 72;
-    }
-
-    /*
-
-    public static function createCarFromDb($id, $model, $manufacturer, $displacement, $image) {
-
-        $car1 = new Car($model, $manufacturer, $displacement, $image);
-        $car1->id = $id;
-
-        return $car1;
-    }
-
-    public static function createCar($model, $manufacturer, $displacement, $image) {
-
-        $generatedID = rand(10000, 99999);
-
-        $car1 = new Car($model, $manufacturer, $displacement, $image);
-        $car1->id = $generatedID;
-
-        return $car1;
-    } 
-
-    */
-
     // --------------- Getters and Setters -------------------
-
-
-    public function getId()
-    {
-        return $this->id;
-    }
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
 
  
     public function getModel()
@@ -106,18 +79,6 @@ class Car {
 
         return $this;
     }
- 
-    public function getSold()
-    {
-        return $this->sold;
-    }
-
-    public function setSold($sold)
-    {
-        $this->sold = $sold;
-
-        return $this;
-    }
 
     /**
      * Get the value of price
@@ -135,6 +96,26 @@ class Car {
     public function setPrice($price)
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of available
+     */ 
+    public function getAvailable()
+    {
+        return $this->available;
+    }
+
+    /**
+     * Set the value of available
+     *
+     * @return  self
+     */ 
+    public function setAvailable($available)
+    {
+        $this->available = $available;
 
         return $this;
     }
