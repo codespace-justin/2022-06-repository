@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Name: index.php
+ * Description: Homepage of website, displaying list of all cars in the system
+ * Author: justin@codespace.co.za
+ */
+
     // error reporting
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);

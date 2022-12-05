@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Name: viewCar.php
+ * Description: Standard webpage which provides a user with a more detailed view on the Car they selected
+ * Author: justin@codespace.co.za
+ */
+
     // error reporting
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);

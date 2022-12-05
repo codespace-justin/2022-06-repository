@@ -1,3 +1,11 @@
+<?php
+/**
+ * Name: success.php
+ * Description: Standard webpage to output a message on the successful purchase of a vehicle
+ * Author: justin@codespace.co.za
+ */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

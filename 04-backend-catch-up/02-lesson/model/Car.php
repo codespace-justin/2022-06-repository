@@ -1,6 +1,14 @@
 <?php
 
+/**
+ * Name: CarDAO.php
+ * Description: Model class used to model what Car instances/object look like and how they behave.
+ * Author: justin@codespace.co.za
+ */
+
 class Car {
+
+    // ----------------------- fields --------------------------
 
     private $model;
     private $manufacturer;
@@ -16,6 +24,9 @@ class Car {
         $this->image = $image;
     } 
 
+    // ----------------------- methods --------------------------
+
+    // returns "true" if car is able to be sold and" false" if car is out of stock
     public function sellCar() {
 
         if ($this->available) {
@@ -26,13 +37,14 @@ class Car {
         } else {  
             return false;
         }
-        
     }
 
+    // multiplies price property of instance and returns full price of car
     public function calcFullPrice() {
         return $this->price * 72;
     }
     
+    // return templates to display whether car is available to purchase or not
     public function displayAvailibility() {
 
         if ( $this->available ) {
