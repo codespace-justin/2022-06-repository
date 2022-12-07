@@ -39,7 +39,6 @@
         unset($_SESSION['outOfStock']);
 
     }
-    
 ?>
 
 <!DOCTYPE html>

@@ -7,18 +7,25 @@
  */
 
 require_once __DIR__ . "/../config/DatabaseConfig.php";
+require_once __DIR__ . "/../model/Car.php";
 
 class CarDAO {
 
+    // ======= Fields =======
+
     private DatabaseConfig $databaseConfig;
+    private $tableName = "car";
+
+    // ===== Constructor =====
 
     public function __construct($databaseConfig) {
         
         $this->databaseConfig = $databaseConfig;
     }
 
+    // ===== Methods ====
 
-    // create car
+    // =================================== create new car ===================================
     public function create(Car $car) {
 
         $conn = $this->databaseConfig->connect();
@@ -28,7 +35,7 @@ class CarDAO {
             '". $car->getManufacturer() ."', 
             '". $car->getPrice() ."', 
             '". $car->getImage() ."', 
-            '". $car->getAvailable() ."', 
+            '". $car->getAvailable() ."'
         )";
 
         if ($result = $conn->query($statement)) {
@@ -38,11 +45,13 @@ class CarDAO {
    
         } else {
 
+            die("Query failed: " . $conn->error); //die function to close connection in case of error
             $conn->close();
-            die("Connection failed: " . $conn->error); //die function to close connection in case of error
+
         }
     }
 
+    // =================================== Read all cars from database ===================================
     public function readAll() {
 
         $conn = $this->databaseConfig->connect();
@@ -73,7 +82,7 @@ class CarDAO {
     }
 
 
-    // create read
+    // =================================== laod car by id ===================================
     public function readById($id) {
 
         $conn = $this->databaseConfig->connect();
@@ -98,7 +107,7 @@ class CarDAO {
         }
     }
 
-    // update
+    // =================================== update whole car ===================================
     public function update(Car $car) {
 
         $conn = $this->databaseConfig->connect();
@@ -125,7 +134,7 @@ class CarDAO {
         }
     }
 
-    // sets available column to 0
+    // =================================== sets available column to 0 ===================================
     public function updateSellCar(Car $car) {
         
         $conn = $this->databaseConfig->connect();
@@ -146,7 +155,7 @@ class CarDAO {
         }
     }
 
-    
+    // =================================== deletes a car by id ===================================    
     public function deleteById(){
 
     }
