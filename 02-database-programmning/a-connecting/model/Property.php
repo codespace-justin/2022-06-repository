@@ -6,13 +6,15 @@ class Property {
 
     private $address;
     private $price;
+    private $thumbnail;
 
     // ========================= Constructor =========================
 
-    public function __construct($addressInput, $priceInput) {
+    public function __construct($addressInput, $priceInput, $thumbnail) {
         
         $this->address = $addressInput;
         $this->price = $priceInput;
+        $this->thumbnail = $thumbnail;
     }
 
     // ========================= Methods =========================
@@ -47,6 +49,19 @@ class Property {
     public function setPrice($price)
     {
         $this->price = $price;
+
+        return $this;
+    }
+
+
+    public function getThumbnail()
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail($thumbnail)
+    {
+        $this->thumbnail = $thumbnail;
 
         return $this;
     }

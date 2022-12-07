@@ -12,9 +12,9 @@ class ResidentialProperty extends Property {
 
     // ========================= constructor =========================
 
-    public function __construct($addressInput, $priceInput, $offeringInput, $numRoomsInput) {
+    public function __construct($addressInput, $priceInput, $thumbnail, $offeringInput, $numRoomsInput) {
 
-        parent::__construct($addressInput, $priceInput);
+        parent::__construct($addressInput, $priceInput, $thumbnail);
 
         $this->offering = $offeringInput;
         $this->numRooms = $numRoomsInput;

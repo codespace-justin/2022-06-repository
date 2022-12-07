@@ -13,9 +13,9 @@ class CommercialProperty extends Property {
 
     // ========================= constructor =========================
 
-    public function __construct($addressInput, $priceInput, $sizeInMetresInput, $floorsInput) {
+    public function __construct($addressInput, $priceInput, $thumbnail, $sizeInMetresInput, $floorsInput) {
 
-        parent::__construct($addressInput, $priceInput);
+        parent::__construct($addressInput, $priceInput, $thumbnail);
         
         $this->sizeInMetres = $sizeInMetresInput;
         $this->floors = $floorsInput;

@@ -1,0 +1,12 @@
+
+.item {
+    margin: 25px 5px;
+    padding: 30px;
+    box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+.item:hover {
+    background-color: rgb(115, 163, 214);
+    color: white;
+}
