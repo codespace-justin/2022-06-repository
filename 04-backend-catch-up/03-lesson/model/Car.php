@@ -30,6 +30,7 @@ class Car {
 
         $car = new Car($row->model, $row->manufacturer, $row->price, $row->image);
         $car->setId($row->id);
+        $car->setAvailable($row->available);
 
         return $car;
     }

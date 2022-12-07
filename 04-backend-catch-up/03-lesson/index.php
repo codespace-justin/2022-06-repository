@@ -27,11 +27,6 @@
     // remove session assignment and load in car data from Database
     $carData = $carDAO->readAll();
 
-    foreach ($carData as $value) {
-        print_r($value);
-        echo "<br><br>";
-    }
-
     // outOfStock request handler
     if (isset($_SESSION['outOfStock']) && $_SESSION['outOfStock'] == true ) {
 

@@ -65,8 +65,9 @@ class CarDAO {
 
         } else {
 
+            die($conn->error . "<br><br>"); //die function to close connection in case of error
             $conn->close(); // close connection
-            die("Connection failed: " . $conn->error); //die function to close connection in case of error
+            
         }
 
     }
