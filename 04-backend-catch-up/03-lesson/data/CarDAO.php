@@ -33,7 +33,7 @@ class CarDAO {
         $statement = "INSERT INTO car (model, manufacturer, price, image, available) Values(
             '". $car->getModel() ."', 
             '". $car->getManufacturer() ."', 
-            '". $car->getPrice() ."', 
+            '". $car->getPrice() ."',  
             '". $car->getImage() ."', 
             '". $car->getAvailable() ."'
         )";
@@ -45,7 +45,7 @@ class CarDAO {
    
         } else {
 
-            die("Query failed: " . $conn->error); //die function to close connection in case of error
+            die("Query failed: " . $conn->error . "<br><br>"); //die function to close connection in case of error
             $conn->close();
 
         }
@@ -74,7 +74,7 @@ class CarDAO {
 
         } else {
 
-            die($conn->error . "<br><br>"); //die function to close connection in case of error
+            die("Query failed: " . $conn->error . "<br><br>"); //die function to close connection in case of error
             $conn->close(); // close connection
             
         }
@@ -102,8 +102,8 @@ class CarDAO {
 
         } else {
 
-            $conn->close();
-            die("Connection failed: " . $conn->error); //die function to close connection in case of error
+            die("Query failed: " . $conn->error . "<br><br>"); //die function to close connection in case of error
+            $conn->close();  
         }
     }
 
@@ -128,7 +128,7 @@ class CarDAO {
 
         } else {
 
-            die($conn->error); //die function to close connection in case of error
+            die("Query failed: " . $conn->error . "<br><br>"); //die function to close connection in case of error
             $conn->close();
          
         }
@@ -149,7 +149,7 @@ class CarDAO {
 
         } else {
 
-            die($conn->error); //die function to close connection in case of error
+            die("Query failed: " . $conn->error . "<br><br>"); //die function to close connection in case of error
             $conn->close();
          
         }
